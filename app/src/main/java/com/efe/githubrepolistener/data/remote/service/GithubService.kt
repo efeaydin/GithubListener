@@ -29,6 +29,7 @@ class MockGithubService : GithubService {
     override suspend fun getRepos(user: String): List<GithubModel> {
         val list = mutableListOf<GithubModel>()
         list.add(GithubModel(
+            12L,
             "Repo 1",
             5,
             3,

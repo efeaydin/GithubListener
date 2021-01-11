@@ -44,6 +44,10 @@ class GithubListFragment() : BaseFragment() {
             (binding.recyclerViewGithubItems.adapter as? GithubListAdapter)?.setList(githubViewList)
         }
 
+        viewModel.isFavoriteChanged.observe(viewLifecycleOwner) {
+            binding.recyclerViewGithubItems.adapter?.notifyDataSetChanged()
+        }
+
         return binding.root
     }
 

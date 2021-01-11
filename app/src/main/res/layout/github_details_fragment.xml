@@ -51,8 +51,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:padding="4dp"
                     android:layout_margin="6dp"
-                    android:src="@drawable/ic_star_inactive"
-                    android:tint="@color/colorWhite"/>
+                    android:src="@drawable/ic_star_inactive"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"

@@ -1,11 +1,13 @@
 package com.efe.githubrepolistener.ui.github
 
-import android.util.Log
+import android.app.Application
+import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.efe.githubrepolistener.data.model.GithubView
 import com.efe.githubrepolistener.data.remote.repository.GithubRepository
+import com.efe.githubrepolistener.utils.extensions.getSharedPreferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -16,7 +18,7 @@ interface GithubViewModelNavigator {
     fun backPressed()
 }
 
-class GithubViewModel : ViewModel() {
+class GithubViewModel(application: Application) : AndroidViewModel(application) {
 
     var navigator: GithubViewModelNavigator? = null
 
@@ -27,6 +29,8 @@ class GithubViewModel : ViewModel() {
 
     val githubRepo: MutableLiveData<GithubView> = MutableLiveData()
 
+    val isFavoriteChanged: MutableLiveData<Boolean> = MutableLiveData()
+
     fun callGithubRepos() {
 
         searchText.value?.let { searchText ->
@@ -36,11 +40,17 @@ class GithubViewModel : ViewModel() {
 
                     val githubViewList = mutableListOf<GithubView>()
 
+                    val sharedPref =  getApplication<Application>().getSharedPreferences()
+
                     for (githubModel in githubModels) {
+
+
+                        val currentValue = sharedPref?.getBoolean(githubModel.id.toString(), false)
+
                         githubViewList.add(
                             GithubView(
                                 githubModel,
-                                false
+                                currentValue == true
                             )
                         )
                     }

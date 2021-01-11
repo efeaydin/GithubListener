@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 open class GithubModel (
+    @SerializedName("id")
+    open var id: Long,
     @SerializedName("name")
     open var name: String,
     @SerializedName("stargazers_count")
@@ -16,7 +18,7 @@ open class GithubModel (
 
 class GithubView (
     val model: GithubModel,
-    val isFavorite: Boolean
+    var isFavorite: Boolean
 )
 
 data class Owner(
