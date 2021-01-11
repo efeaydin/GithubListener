@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="minHeight">50dp</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="rippleColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxCornerRadiusBottomEnd">6dp</item>
+        <item name="boxCornerRadiusBottomStart">6dp</item>
+        <item name="boxCornerRadiusTopEnd">6dp</item>
+        <item name="boxCornerRadiusTopStart">6dp</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeColor">@color/color_text_input_layout</item>
+        <item name="boxStrokeErrorColor">@color/colorPrimary</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+</resources>

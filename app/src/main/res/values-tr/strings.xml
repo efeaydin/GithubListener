@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Ana Sayfa</string>
+    <string name="submit">Ara</string>
+    <string name="username">Kullanıcı Adı</string>
+
+    <string name="error_dialog_title">Hata</string>
+    <string name="error_dialog_button_ok">Tamam</string>
+    <string name="no_internet_message">Aktif internet bağlantınız yoktur. Lütfen internet bağlantınızı kontrol edin.</string>
+
+    <string name="star_count">Stars: %1$d</string>
+    <string name="open_issue_count">Open Issues: %1$d</string>
+
+</resources>
